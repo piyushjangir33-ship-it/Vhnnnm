@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Happy Father's Day ❤️</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family:'Poppins',sans-serif;
+    background:linear-gradient(-45deg,#4facfe,#00f2fe,#74ebd5,#acb6e5);
+    background-size:400% 400%;
+    animation:gradientBG 12s ease infinite;
+    min-height:100vh;
+    padding:20px 10px;
+}
+
+@keyframes gradientBG{
+    0%{background-position:0% 50%;}
+    50%{background-position:100% 50%;}
+    100%{background-position:0% 50%;}
+}
+
+.card{
+    max-width:850px;
+    margin:20px auto;
+    background:rgba(255,255,255,0.95);
+    backdrop-filter:blur(15px);
+    border-radius:30px;
+    padding:30px;
+    text-align:center;
+    box-shadow:0 15px 40px rgba(0,0,0,0.25);
+}
+
+h1{
+    font-family:'Dancing Script',cursive;
+    font-size:3.8rem;
+    color:#0066cc;
+}
+
+.subtitle{
+    color:#0077b6;
+    font-size:1.2rem;
+    margin-top:10px;
+    font-weight:600;
+}
+
+.heart{
+    font-size:50px;
+    margin-top:15px;
+    animation:beat 1s infinite;
+}
+
+@keyframes beat{
+    0%{transform:scale(1);}
+    50%{transform:scale(1.2);}
+    100%{transform:scale(1);}
+}
+
+img{
+    width:100%;
+    max-width:300px;
+    margin:25px auto;
+    border-radius:20px;
+    border:5px solid white;
+    display:block;
+    box-shadow:0 10px 25px rgba(0,0,0,0.25);
+}
+
+p{
+    font-size:1.05rem;
+    color:#333;
+    line-height:2;
+    margin-top:15px;
+}
+
+.quote{
+    margin-top:25px;
+    font-family:'Dancing Script',cursive;
+    font-size:2rem;
+    color:#0077b6;
+}
+
+.special-box{
+    background:linear-gradient(45deg,#0077b6,#00b4d8);
+    color:white;
+    padding:20px;
+    border-radius:20px;
+    margin-top:25px;
+    font-weight:bold;
+    line-height:1.8;
+}
+
+button{
+    margin-top:30px;
+    padding:15px 30px;
+    border:none;
+    border-radius:50px;
+    background:linear-gradient(45deg,#0077b6,#00b4d8);
+    color:white;
+    font-size:1rem;
+    font-weight:bold;
+    cursor:pointer;
+    transition:0.3s;
+    box-shadow:0 5px 15px rgba(0,0,0,0.2);
+}
+
+button:hover{
+    transform:translateY(-3px);
+}
+
+#surprise{
+    margin-top:25px;
+    font-size:1.15rem;
+    color:#0066cc;
+    font-weight:bold;
+}
+
+.footer{
+    margin-top:35px;
+    font-family:'Dancing Script',cursive;
+    font-size:2.2rem;
+    color:#0066cc;
+}
+
+audio{
+    display:none;
+}
+
+@media(max-width:600px){
+
+    .card{
+        padding:20px;
+    }
+
+    h1{
+        font-size:2.7rem;
+    }
+
+    .quote{
+        font-size:1.5rem;
+    }
+
+    button{
+        width:100%;
+    }
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="card">
+
+<h1>👑 Happy Father's Day 👑</h1>
+
+<div class="subtitle">
+💙 My Hero • My Guide • My Inspiration 💙
+</div>
+
+<div class="heart">❤️</div>
+
+<!-- Father's Photo -->
+<img src="father.jpg" alt="Father">
+
+<!-- Song -->
+<audio id="bgMusic" preload="auto" loop>
+    <source src="father-song.mp3" type="audio/mpeg">
+</audio>
+
+<p>
+Dear Dad,
+
+<br><br>
+
+You have always been my strongest support, my greatest teacher,
+and my biggest inspiration.
+
+Every sacrifice you made, every lesson you taught,
+and every moment you spent guiding me has shaped the person I am today.
+
+You believed in me when I doubted myself,
+stood beside me through every challenge,
+and celebrated every success with pride.
+
+<br><br>
+
+No matter how old I become,
+I will always be your child,
+grateful for your endless love, care, and support.
+
+<br><br>
+
+❤️ Thank you for everything, Dad.
+You are my first hero and my forever inspiration. ❤️
+</p>
+
+<div class="quote">
+"A father is someone you look up to no matter how tall you grow."
+</div>
+
+<div class="special-box">
+✨ A father's love is forever imprinted on the heart of his child. ✨
+</div>
+
+<button onclick="showSurprise()">
+🎁 Click For A Special Surprise
+</button>
+
+<div id="surprise"></div>
+
+<div class="footer">
+With Endless Love ❤️
+</div>
+
+</div>
+
+<script>
+
+const music = document.getElementById("bgMusic");
+
+music.addEventListener("loadedmetadata", () => {
+    music.currentTime = 16;
+});
+
+function showSurprise(){
+
+    music.currentTime = 16;
+    music.play();
+
+    document.getElementById("surprise").innerHTML =
+    "🌟 Dad, thank you for every sacrifice, every lesson, and every smile. You are my hero, my role model, and my biggest blessing. Happy Father's Day! ❤️🌟";
+
+    for(let i=0;i<35;i++){
+
+        let heart=document.createElement("div");
+
+        heart.innerHTML="❤️";
+        heart.style.position="fixed";
+        heart.style.left=Math.random()*100+"vw";
+        heart.style.top="-20px";
+        heart.style.fontSize=(20+Math.random()*25)+"px";
+        heart.style.animation="fall 4s linear forwards";
+        heart.style.zIndex="9999";
+
+        document.body.appendChild(heart);
+
+        setTimeout(()=>{
+            heart.remove();
+        },4000);
+    }
+}
+
+const style=document.createElement("style");
+
+style.innerHTML=`
+@keyframes fall{
+    to{
+        transform:translateY(110vh);
+        opacity:0;
+    }
+}
+`;
+
+document.head.appendChild(style);
+
+</script>
+
+</body>
+</html>
